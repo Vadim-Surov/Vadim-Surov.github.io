@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вадим Суров</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>Vadim Surov</span>
+        </div>
+        <div id="about">
+            <a href="#" title="about" onclick="slowScroll('#about_text')">подробнее</a>
+            <a href="#" title="contacts" onclick="slowScroll('#contacts')">контакты</a>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Здравствуйте!</h1>
+        <h3>давайте, сразу перейдём к делу</h3>
+    </div>
+    
+    <div id="about_text">
+        <h2>О том как работаем -</h2><br>
+        <h4>
+            Покупаем любые автомобили, в любом состоянии!<br>(за исключением экземпляров попадавших в серьезные ДТП, и другие неприятные ситуации)<br><br>
+            Стоимость определяем при осмотре вашего авто, стараемся
+            выкупать по максимально возможной цене!<br><br>
+            Работаем без выходных, расчёт сразу!<br><br>
+            Также готов оказать помощь в подборе автомобиля, в соответствии с вашими параметрами, во всех городах Свердловской области.<br><br><br>
+            Свяжитесь со мной! - <a class="Con" href="#" title="contacts" onclick="slowScroll('#contacts')">контакты</a>
+        </h4>
+    </div>
+
+    <div id="main">
+        <div class="intro">
+            <h2>Буду рад</h2>
+            <span>сотрудничеству! -</span>
+        </div>
+        <div class="text">
+            <span>Свяжитесь со мной!</span>
+        </div>
+    </div>
+
+    <div id="contacts">
+        <center><h5>контакты:</h5></center><br>
+        <h2>
+            номер телефона: <text class="Con">89634410090</text><br>
+            telegram: <a href="https://t.me/vadim_surov1978" target="_blank" class="Con"> t.me/vadim_surov1978</a><br>
+            gmail: <a href="mailto:vadsurov@gmail.com" class="Con"> vadsurov@gmail.com</a><br>
+        </h2>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 450);
+        }
+
+        $(document).on("scroll", function () {
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class", "fixed");
+            });
+    </script>
+</body>
+</html>
